@@ -3,6 +3,7 @@
 setpriv --dump
 # export RADV_PERFTEST=gpl,sam,video_decode
 export RADV_PERFTEST=gpl
+# export STEAM_DISPLAY_REFRESH_LIMITS=60,144
 export STEAM_DISPLAY_REFRESH_LIMITS=60,90
 
 declare -r CLIENT=$1
@@ -280,10 +281,3 @@ for job in $(jobs -p); do
 	fi
 	kill -9 "$job"
 done
-
-check_tty=`loginctl list-sessions | grep tty2`
-if [[ $check_tty != "" ]]; then
-	sudo chvt 2 
-else
-	sudo chvt 1
-fi
