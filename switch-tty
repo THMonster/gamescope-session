@@ -1,9 +1,0 @@
-#!/bin/bash
-
-check_tty=`loginctl list-sessions | grep tty2`
-if [[ $check_tty != "" ]]; then
-	sudo chvt 2 
-else
-	sudo chvt 1
-fi
-
