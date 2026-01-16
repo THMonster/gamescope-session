@@ -257,6 +257,7 @@ if [ -z "$GAMESCOPECMD" ]; then
 		--default-touch-mode $TOUCH_MODE \
 		--hide-cursor-delay $HIDE_CURSOR_DELAY_MS \
 		--fade-out-duration $FADE_OUT_DURATION_MS \
+		--mangoapp
 		--steam"
 fi
 
@@ -311,11 +312,11 @@ if command -v /usr/bin/ibus-daemon >/dev/null; then
 fi
 
 # If we have mangoapp binary start it
-if command -v mangoapp >/dev/null; then
-	(while true; do
-		mangoapp
-	done) &
-fi
+# if command -v mangoapp >/dev/null; then
+# 	(while true; do
+# 		mangoapp
+# 	done) &
+# fi
 
 # Handle Galileo Mura Correction
 # This is applied here and not in device-quirks because it must be called after gamescope has started.
